@@ -13,12 +13,10 @@ const MealDetailScreen = props => {
   return (
     <View style={styles.screen}>
       <Text>{selectedMeal.title}</Text>
-      <Button
-        title="Go Back to Categories"
-        onPress={() => {
-          props.navigation.popToTop();
-        }}
-      />
+      <Text>{selectedMeal.steps}</Text>
+      <Text>{selectedMeal.duration}</Text>
+      <Text>{selectedMeal.complexity}</Text>
+      <Text>{selectedMeal.affordability}</Text>
     </View>
   );
 };
@@ -32,7 +30,7 @@ MealDetailScreen.navigationOptions = navigationData => {
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Favorite"
-          iconName="ios-star"
+          iconName="ios-star-outline"
           onPress={() => {
             console.log('Mark as favorite!');
           }}
@@ -45,8 +43,8 @@ MealDetailScreen.navigationOptions = navigationData => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'violet',
   }
 });
 
