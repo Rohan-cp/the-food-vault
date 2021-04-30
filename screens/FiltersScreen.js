@@ -1,14 +1,52 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Switch } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import HeaderButton from '../components/HeaderButton';
 import Colors from '../constants/Colors';
 
+const FilterSwitch = props => {
+  return (
+    <View style={styles.filterContainer}>
+      <Text style={styles.filterText}>{props.title}</Text>
+      <Switch 
+        value={props.state} 
+        onValueChange={(newValue) => props.setState(newValue)}
+        trackColor={{true: Colors.accentColor}}
+      />
+    </View>
+  );
+}
+
 const FiltersScreen = props => {
+  const [isGlutenFree, setIsGlutenFree] = useState(false);
+  const [isLactoseFree, setIsLactoseFree] = useState(false);
+  const [isVegan, setIsVegan] = useState(false);
+  const [isVegetarian, setIsVegetarian] = useState(false);
+
   return (
     <View style={styles.screen}>
-      <Text>The Filters Screen!</Text>
+      <Text style={styles.title}>Available Filters</Text>
+      <FilterSwitch 
+        title='Gluten-free'
+        state={isGlutenFree}
+        setState={setIsGlutenFree}
+      />
+      <FilterSwitch 
+        title='Lactose-free'
+        state={isLactoseFree}
+        setState={setIsLactoseFree}
+      />
+      <FilterSwitch 
+        title='Vegan'
+        state={isVegan}
+        setState={setIsVegan}
+      />
+      <FilterSwitch 
+        title='Vegetarian'
+        state={isVegetarian}
+        setState={setIsVegetarian}
+      />
     </View>
   );
 };
@@ -26,15 +64,35 @@ FiltersScreen.navigationOptions = (navData) => {
           navData.navigation.toggleDrawer();
         }}/>
       </HeaderButtons>
-  )});
+    ),
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item title="Save" iconName='ios-save' size={26} onPress={() => {
+          console.log('save filters!');
+        }}/>
+      </HeaderButtons>
+    )
+  });
 };
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'cyan',
+  },
+  title: {
+    fontSize: 20,
+    marginVertical: 20,
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '80%',
+    marginTop: 10,
+  },
+  filterText: {
+    fontSize: 16,
   }
 });
 
