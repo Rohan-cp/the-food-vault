@@ -1,5 +1,7 @@
 # the-food-vault
-<img src="logo.png" alt="" width="1262" height="1496" /> 
+<p align="center">
+  <img src="icon.png" width="180">
+</p>
 (the knife, spoon and fork icon used in the logo were created by Alrigel, Chocolate Icon and Themis Roberto Velgis Guevara respectively from the Noun Project)
 
 FoodVault is a cross-platform mobile app to look at food recipes that was developed with expo. You can browse the various food categories and select one to see associated food recipes. The list of recipes for the selected category also displays its affordability, complexity and duration. Each recipe includes the ingredients required and the steps to prepare it.
