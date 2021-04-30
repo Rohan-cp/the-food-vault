@@ -1,5 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+
+import HeaderButton from '../components/HeaderButton';
 import MealItem from '../components/MealItem';
 import { MEALS } from '../data/dummy-data';
 
@@ -38,9 +41,17 @@ const FavoritesScreen = props => {
   );
 };
 
-FavoritesScreen.navigationOptions = {
-  headerTitle: 'Your Favorites',
-}
+FavoritesScreen.navigationOptions = (navData) => {
+  return({
+    headerTitle: 'Your Favorites',
+    headerLeft: 
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item title="Menu" iconName='ios-menu' size={26} onPress={() => {
+          navData.navigation.toggleDrawer();
+        }}/>
+      </HeaderButtons>
+  });
+};
 
 const styles = StyleSheet.create({
   screen: {

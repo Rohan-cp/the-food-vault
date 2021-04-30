@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     textAlign: 'right',
+    fontWeight: 'bold',
   }
 });
 
