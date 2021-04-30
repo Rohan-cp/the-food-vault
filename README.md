@@ -1,6 +1,6 @@
 # the-food-vault
 <p align="center">
-  <img src="icon.png" width="180">
+  <img src="logo.png" width="180">
 </p>
 (the knife, spoon and fork icon used in the logo were created by Alrigel, Chocolate Icon and Themis Roberto Velgis Guevara respectively from the Noun Project)
 
