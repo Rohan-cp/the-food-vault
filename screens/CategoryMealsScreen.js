@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
+import { View, StyleSheet, FlatList } from 'react-native';
 import MealItem from '../components/MealItem';
 import Colors from '../constants/Colors';
 
@@ -7,6 +8,13 @@ import { CATEGORIES, MEALS } from '../data/dummy-data';
 
 const CategoryMealsScreen = props => {
   const catId = props.navigation.getParam('categoryId');
+
+  const availableMeals = useSelector(state => state.meals.filteredMeals);
+
+  const displayedMeals = availableMeals.filter(
+    meal => meal.categoryIds.indexOf(catId) >= 0
+  );
+
   const renderMealItem = (itemData) => {
     return (
     <MealItem 
@@ -15,6 +23,7 @@ const CategoryMealsScreen = props => {
         {routeName: 'MealDetail', 
         params: {
           mealId: itemData.item.id,
+          mealTitle: itemData.item.title,
         }
       })}
       duration={itemData.item.duration}
@@ -23,9 +32,6 @@ const CategoryMealsScreen = props => {
       image={itemData.item.imageUrl}
     />);
   }
-  const displayedMeals = MEALS.filter(
-    meal => meal.categoryIds.indexOf(catId) >= 0
-  );
 
   return (
     <View style={styles.screen}>

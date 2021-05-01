@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { useSelector } from 'react-redux';
 
 import HeaderButton from '../components/HeaderButton';
 import MealItem from '../components/MealItem';
-import { MEALS } from '../data/dummy-data';
 
 const FavoritesScreen = props => {
 
@@ -16,6 +16,7 @@ const FavoritesScreen = props => {
         {routeName: 'MealDetail', 
         params: {
           mealId: itemData.item.id,
+          mealTitle: itemData.item.title,
         }
       })}
       duration={itemData.item.duration}
@@ -25,14 +26,12 @@ const FavoritesScreen = props => {
     />);
   }
 
-  const displayedMeals = MEALS.filter(
-    meal => (meal.id === 'm9' || meal.id === 'm10')
-  );
+  const availableMeals = useSelector(state => state.meals.favoriteMeals);
 
   return (
     <View style={styles.screen}>
       <FlatList 
-        data={displayedMeals} 
+        data={availableMeals} 
         keyExtractor={(item, index) => item.id}
         renderItem={renderMealItem}
         style={{width: '100%'}}

@@ -10,7 +10,6 @@ FoodVault is a cross-platform Expo mobile app to explore food recipes. Built wit
 <img src="https://i.imgur.com/TJ94Au0.png" alt="" width="200" height="415" /> <img src="https://i.imgur.com/wTArq7B.jpg" alt="" width="200" height="415" /> 
 <img src="https://imgur.com/cBywZpD.png" alt="" width="200" height="415" /> <img src="https://imgur.com/AmrUp7F.png" alt="" width="200" height="415" />
 
-
 ## Features
 * Customised User Interface based on running platform (android or ios)
 * Fully functional navigation: filters, meal categories, favorites
@@ -23,7 +22,7 @@ FoodVault is a cross-platform Expo mobile app to explore food recipes. Built wit
 ## Developing locally
 If you'd like to play around with the code:
 You will need Xcode, Android Studio or the Expo Go mobile app to run on your own phone.
-Install the latest version of [`Node.js`](https://nodejs.org/en/).
+Install the latest version of [`Node.js`](https://nodejs.org/en/). Then run
 ```bash
 # install expo client
 npm install --global expo-cli
@@ -31,7 +30,7 @@ npm install --global expo-cli
 # install dependencies
 npm install
 
-# serve with hot reload at localhost (press 'r' to reload if changes not reflected)
+# server with hot reload at localhost (press 'r' to reload if changes not reflected)
 npm start
 
 # building for production
