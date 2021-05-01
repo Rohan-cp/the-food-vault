@@ -7,7 +7,7 @@
 FoodVault is a cross-platform mobile app to look at food recipes that was developed with expo. You can browse the various food categories and select one to see associated food recipes. The list of recipes for the selected category also displays its affordability, complexity and duration. Each recipe includes the ingredients required and the steps to prepare it.
 
 ## Screenshots
-<img src="https://i.imgur.com/TJ94Au0.png" alt="" width="400" height="800" /> <img src="https://i.imgur.com/wTArq7B.jpg" alt="" width="400" height="1000" /> [Imgur](https://i.imgur.com/DwxLQZ0.png) <a href="https://imgur.com/ILuQ4wj"><img src="https://i.imgur.com/ILuQ4wj.jpg" title="source: imgur.com" /></a>
+<img src="https://i.imgur.com/TJ94Au0.png" alt="" width="400" height="900" /> <img src="https://i.imgur.com/wTArq7B.jpg" alt="" width="400" height="950" /> <img src="https://i.imgur.com/DwxLQZ0m.png" alt="" width="400" height="950" /> img src="https://i.imgur.com/ILuQ4wjm.jpg" alt="" width="400" height="950" />
 
 ## Features
 * Customised User Interface based on running platform (android or ios)
