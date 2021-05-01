@@ -4,11 +4,11 @@ import { View, StyleSheet, FlatList } from 'react-native';
 import MealItem from '../components/MealItem';
 import Colors from '../constants/Colors';
 
-import { CATEGORIES, MEALS } from '../data/dummy-data';
+import { CATEGORIES } from '../data/dummy-data';
 
 const CategoryMealsScreen = props => {
   const catId = props.navigation.getParam('categoryId');
-
+  const favoriteMeals = useSelector(state => state.meals.favoriteMeals);
   const availableMeals = useSelector(state => state.meals.filteredMeals);
 
   const displayedMeals = availableMeals.filter(
@@ -16,6 +16,7 @@ const CategoryMealsScreen = props => {
   );
 
   const renderMealItem = (itemData) => {
+    const isFavorite = favoriteMeals.some(meal => meal.id === itemData.item.id);
     return (
     <MealItem 
       title={itemData.item.title} 
@@ -24,6 +25,7 @@ const CategoryMealsScreen = props => {
         params: {
           mealId: itemData.item.id,
           mealTitle: itemData.item.title,
+          isFav: isFavorite,
         }
       })}
       duration={itemData.item.duration}

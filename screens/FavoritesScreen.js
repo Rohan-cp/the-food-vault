@@ -17,6 +17,7 @@ const FavoritesScreen = props => {
         params: {
           mealId: itemData.item.id,
           mealTitle: itemData.item.title,
+          isFav: true,
         }
       })}
       duration={itemData.item.duration}
