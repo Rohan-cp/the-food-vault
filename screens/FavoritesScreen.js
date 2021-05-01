@@ -26,7 +26,7 @@ const FavoritesScreen = props => {
   }
 
   const displayedMeals = MEALS.filter(
-    meal => (meal.id === 'm1' || meal.id === 'm2')
+    meal => (meal.id === 'm9' || meal.id === 'm10')
   );
 
   return (

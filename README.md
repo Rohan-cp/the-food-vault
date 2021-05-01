@@ -8,7 +8,7 @@ FoodVault is a cross-platform mobile app to look at food recipes that was develo
 
 ## Screenshots
 <img src="https://i.imgur.com/TJ94Au0.png" alt="" width="200" height="415" /> <img src="https://i.imgur.com/wTArq7B.jpg" alt="" width="200" height="415" /> 
-<img src="https://i.imgur.com/DwxLQZ0.png" alt="" width="200" height="415" /> <img src="https://i.imgur.com/ILuQ4wj.jpg" alt="" width="200" height="415" />
+<img src="https://imgur.com/cBywZpD" alt="" width="200" height="415" /> <img src="https://imgur.com/KgXZdWl" alt="" width="200" height="415" />
 
 ## Features
 * Customised User Interface based on running platform (android or ios)
