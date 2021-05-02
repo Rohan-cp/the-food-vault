@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList, Text } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { useSelector } from 'react-redux';
 
@@ -7,6 +7,16 @@ import HeaderButton from '../components/HeaderButton';
 import MealItem from '../components/MealItem';
 
 const FavoritesScreen = props => {
+
+  const FavMeals = useSelector(state => state.meals.favoriteMeals);
+
+  if (FavMeals.length === 0 || !FavMeals) {
+    return (
+      <View style={styles.emptyScren}>
+        <Text style={{fontSize: 18, textAlign: 'center'}}>Head to the meals page to find and favorite meals!</Text>
+      </View>
+    );
+  }
 
   const renderMealItem = (itemData) => {
     return (
@@ -27,12 +37,10 @@ const FavoritesScreen = props => {
     />);
   }
 
-  const availableMeals = useSelector(state => state.meals.favoriteMeals);
-
   return (
     <View style={styles.screen}>
       <FlatList 
-        data={availableMeals} 
+        data={FavMeals} 
         keyExtractor={(item, index) => item.id}
         renderItem={renderMealItem}
         style={{width: '100%'}}
@@ -59,6 +67,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 12,
+  },
+  emptyScren: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: '14%',
   }
 });
 
