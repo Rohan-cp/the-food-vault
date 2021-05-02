@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList, Text } from 'react-native';
 import MealItem from '../components/MealItem';
 import Colors from '../constants/Colors';
 
@@ -14,6 +14,14 @@ const CategoryMealsScreen = props => {
   const displayedMeals = availableMeals.filter(
     meal => meal.categoryIds.indexOf(catId) >= 0
   );
+
+  if (displayedMeals.length === 0) {
+    return (
+      <View style={styles.content}>
+        <Text>No meals found. Maybe checking your filters?</Text>
+      </View>
+    );
+  }
 
   const renderMealItem = (itemData) => {
     const isFavorite = favoriteMeals.some(meal => meal.id === itemData.item.id);
@@ -68,6 +76,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
     padding: 12,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });
 
